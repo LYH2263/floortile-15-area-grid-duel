@@ -2,6 +2,7 @@
 import { onMounted, ref } from 'vue'
 import { getJSON, postJSON } from '../api'
 import OrderSummary from '../components/OrderSummary.vue'
+import ShowdownCompare from '../components/ShowdownCompare.vue'
 import TileGridPreview from '../components/TileGridPreview.vue'
 
 const rooms = ref([])
@@ -46,6 +47,7 @@ async function saveRun() {
     <button @click="saveRun">保存记录</button>
     <p v-if="err" class="alert">{{ err }}</p>
     <OrderSummary :result="result" />
+    <ShowdownCompare :showdown="result?.showdown" />
     <TileGridPreview v-if="result?.layout" :cols="result.layout.cols" :rows="result.layout.rows" :grid-count="result.layout.grid_count" />
   </div>
 </template>

@@ -20,4 +20,5 @@ class EstimateResponse(BaseModel):
     waste_pct: float
     order_count: int
     layout: dict
+    showdown: dict
     run_id: int | None = None

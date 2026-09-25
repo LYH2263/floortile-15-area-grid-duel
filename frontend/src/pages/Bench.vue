@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import { getJSON, postJSON } from '../api'
+import DuelPanel from '../components/DuelPanel.vue'
 import OrderSummary from '../components/OrderSummary.vue'
 import TileGridPreview from '../components/TileGridPreview.vue'
 
@@ -45,7 +46,10 @@ async function saveRun() {
     <button @click="preview">试算</button>
     <button @click="saveRun">保存记录</button>
     <p v-if="err" class="alert">{{ err }}</p>
-    <OrderSummary :result="result" />
-    <TileGridPreview v-if="result?.layout" :cols="result.layout.cols" :rows="result.layout.rows" :grid-count="result.layout.grid_count" />
+    <div v-if="result" class="bench-panels">
+      <OrderSummary :result="result" />
+      <DuelPanel v-if="result.duel" :duel="result.duel" :waste-pct="result.waste_pct" />
+      <TileGridPreview v-if="result.layout" :cols="result.layout.cols" :rows="result.layout.rows" :grid-count="result.layout.grid_count" />
+    </div>
   </div>
 </template>

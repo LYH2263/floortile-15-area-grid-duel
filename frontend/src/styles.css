@@ -28,3 +28,18 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #f4f0ea; }
 .mini-grid .cell { background: #16a085; aspect-ratio: 1; opacity: 0.85; }
 label { display: block; margin: 0.5rem 0; }
 button { margin-right: 0.5rem; padding: 0.4rem 0.8rem; }
+.bench-panels { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }
+.bench-panels > * { flex: 0 1 auto; }
+.duel-panel { background: #fff; padding: 1rem; min-width: 240px; border-left: 4px solid #8e44ad; }
+.duel-panel h2 { margin-top: 0; font-size: 1.1rem; }
+.duel-sides { display: flex; align-items: center; gap: 0.75rem; }
+.duel-side { text-align: center; padding: 0.5rem 0.75rem; border: 1px solid #ddd; border-radius: 4px; }
+.duel-side.winner { border-color: #16a085; background: #eafaf1; }
+.duel-num { font-size: 1.8rem; font-weight: 700; color: #2c3e50; }
+.duel-vs { font-weight: 700; color: #8e44ad; }
+.duel-verdict { margin-bottom: 0.25rem; }
+.duel-snapshot { margin: 0; color: #7f8c8d; font-size: 0.85rem; }
+.tbl-clickable tbody tr { cursor: pointer; }
+.tbl-clickable tbody tr:hover { background: #f8f4ec; }
+.run-detail { background: #fff; padding: 1rem; margin-top: 1rem; border-left: 4px solid #16a085; }
+.run-detail h2 { margin-top: 0; font-size: 1.1rem; }
